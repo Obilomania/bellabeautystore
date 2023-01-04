@@ -1,13 +1,121 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --background: #1d8725;
+  --lightbackground: #65ef71;
+  --lightVariant: #dcf9de;
+  --primary: rgb(29, 135, 37);
+  --secondary: #65ef71;
+  --white: white;
+  --transition: all 400ms ease;
+}
+::-webkit-scrollbar {
+  width: 0.9rem;
+}
+::-webkit-scrollbar-track {
+  border: 1rem solid var(--lightVariant);
+  box-shadow: inset 0 0 0.1rem 0.1rem rgba(29, 135, 37, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--background);
+  border-radius: 3rem;
+  border: 3px solid white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--lightVariant);
+  color: var(--color-white);
+  line-height: 1.7;
+}
+
+.container {
+  width: 100%;
+  padding: 1rem 10rem;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 600;
+  color: var(--primary);
+}
+h1 {
+  font-size: 2.5rem;
+}
+
+a {
+  transition: var(--transition);
+}
+
+.btn {
+  width: max-content;
+  display: inline-block;
+  color: var(--white);
+  background: var(--background);
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn:hover {
+  background: var(--lightbackground);
+  color: var(--primary);
+  border: 1px solid var(--background);
+  border-color: transparent;
+  transition: var(--transition);
+}
+.btn-primary {
+  background: var(--lightVariant);
+  color: var(--primary);
+  transition: var(--transition);
+}
+.btn-primary:hover {
+  transition: var(--transition);
+  color: var(--lightVariant);
+  background: var(--primary);
+}
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ------------------Media Query---------------------------------- */
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    padding: 1rem 1rem;
+    margin: 0 auto;
+  }
+  section {
+    margin-top: 5rem;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding: 1rem 1rem;
+    margin: 0 auto;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
