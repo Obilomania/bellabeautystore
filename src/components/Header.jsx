@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { BsCart3 } from "react-icons/bs";
 import { AiOutlineClose, AiOutlineBars } from "react-icons/ai";
@@ -12,6 +12,8 @@ const cart = (
   </div>
 );
 
+const activeLink = ({ isActive }) => (isActive ? "active" : "");
+
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const toggleNav = () => setShowNav(!showNav);
@@ -20,9 +22,9 @@ const Header = () => {
     <Nav>
       <div className="navBar">
         <div className="logo">
-          <Link to="/">
+          <NavLink to="/">
             <h2>Bella Beauty</h2>
-          </Link>
+          </NavLink>
         </div>
         <div
           className={showNav ? "navOverlay" : "closeNavOverlay"}
@@ -31,25 +33,27 @@ const Header = () => {
         <div className={showNav ? "navLinks" : "navLinksClose"}>
           <ul>
             <li onClick={closeNav}>
-              <Link to="">Home</Link>
+              <NavLink to="/" className={activeLink}>
+                Home
+              </NavLink>
             </li>
             <li onClick={closeNav}>
-              <Link to="">About</Link>
+              <NavLink to="/about">About</NavLink>
             </li>
             <li onClick={closeNav}>
-              <Link to="">Products</Link>
+              <NavLink to="/products">Products</NavLink>
             </li>
             <li onClick={closeNav}>
-              <Link to="">My Orders</Link>
+              <NavLink to="/my-orders">My Orders</NavLink>
             </li>
             <li onClick={closeNav}>
-              <Link to="">Contact</Link>
+              <NavLink to="/contact">Contact</NavLink>
             </li>
             <li onClick={closeNav}>
-              <Link to="">Login</Link>
+              <NavLink to="/login">Login</NavLink>
             </li>
             <li onClick={closeNav}>
-              <Link to="">Register</Link>
+              <NavLink to="/register">Register</NavLink>
             </li>
           </ul>
         </div>
@@ -99,6 +103,9 @@ const Nav = styled.div`
   a:hover {
     color: var(--lightVariant);
   }
+  .navBar .active {
+    border-bottom: 0.2rem solid var(--white);
+  }
   .navLinks ul {
     display: flex;
     align-items: center;
@@ -106,6 +113,7 @@ const Nav = styled.div`
     gap: 5rem;
     padding-top: 0;
   }
+
   .navLinksClose ul {
     display: flex;
     align-items: center;
@@ -222,7 +230,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 1;
       transition: var(--transition);
-      z-index: 0;
+      z-index: 1;
       cursor: pointer;
     }
     .closeNavOverlay {
@@ -235,7 +243,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 0;
       transition: var(--transition);
-      z-index: 0;
+      z-index: 1;
       cursor: pointer;
     }
   }
@@ -334,7 +342,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 1;
       transition: var(--transition);
-      z-index: 0;
+      z-index: 1;
       cursor: pointer;
     }
     .closeNavOverlay {
@@ -347,7 +355,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 0;
       transition: var(--transition);
-      z-index: 0;
+      z-index: 1;
       cursor: pointer;
     }
   }
@@ -446,7 +454,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 1;
       transition: var(--transition);
-      z-index: 0;
+      z-index: 1;
       cursor: pointer;
     }
     .closeNavOverlay {
@@ -459,7 +467,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 0;
       transition: var(--transition);
-      z-index: 0;
+      z-index: 1;
       cursor: pointer;
     }
   }
@@ -561,7 +569,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 1;
       transition: var(--transition);
-      z-index: 0;
+      z-index: 1;
       cursor: pointer;
     }
     .closeNavOverlay {
@@ -574,7 +582,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 0;
       transition: var(--transition);
-      z-index: 0;
+      z-index: 1;
       cursor: pointer;
     }
   }
