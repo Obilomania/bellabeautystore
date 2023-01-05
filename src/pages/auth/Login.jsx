@@ -99,7 +99,7 @@ const SignIn = styled.div`
     }
     input {
       width: 25rem;
-      padding: 1rem;
+      padding: .5rem;
       border-radius: 0.3rem;
       border: 1px solid var(--primary);
     }

@@ -107,14 +107,14 @@ img {
   ::-webkit-scrollbar {
     display: none;
   }
-  .btn{
+  .btn {
     width: max-content;
-  color: var(--white);
-  background: var(--background);
-  padding: 0.5rem 1.2rem;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  transition: var(--transition);
+    color: var(--white);
+    background: var(--background);
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: var(--transition);
   }
 }
 @media screen and (max-width: 1024px) {
@@ -129,14 +129,14 @@ img {
   ::-webkit-scrollbar {
     display: none;
   }
-  .btn{
+  .btn {
     width: max-content;
-  color: var(--white);
-  background: var(--background);
-  padding: 0.5rem 1.2rem;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  transition: var(--transition);
+    color: var(--white);
+    background: var(--background);
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: var(--transition);
   }
 }
 @media screen and (max-width: 600px) {
@@ -148,14 +148,14 @@ img {
   ::-webkit-scrollbar {
     display: none;
   }
-  .btn{
+  .btn {
     width: max-content;
-  color: var(--white);
-  background: var(--background);
-  padding: 0.5rem 1.2rem;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  transition: var(--transition);
+    color: var(--white);
+    background: var(--background);
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: var(--transition);
   }
 }
 @media screen and (max-width: 400px) {
@@ -167,13 +167,27 @@ img {
   ::-webkit-scrollbar {
     display: none;
   }
-  .btn{
+  .btn {
     width: max-content;
-  color: var(--white);
-  background: var(--background);
-  padding: 0.5rem 1.2rem;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  transition: var(--transition);
+    color: var(--white);
+    background: var(--background);
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: var(--transition);
   }
 }
+
+/* 
+@media screen and (max-width: 1200px) {
+   
+  }
+  @media screen and (max-width: 1024px) {
+    
+  }
+  @media screen and (max-width: 600px) {
+    
+  }
+  @media screen and (max-width: 400px) {
+    
+  } */
