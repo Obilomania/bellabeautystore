@@ -1,6 +1,14 @@
-import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 import React, { useState } from "react";
-import { AiOutlineGoogle } from "react-icons/ai";
+import {
+  AiOutlineEye,
+  AiOutlineEyeInvisible,
+  AiOutlineGoogle,
+} from "react-icons/ai";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -13,6 +21,12 @@ const Login = () => {
   const [modal, setModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
+  //RevealPassword
+  const [revealPassword, setRevealPassword] = useState(false);
+  const handleRevealPassword = () => {
+    setRevealPassword(!revealPassword);
+  };
 
   // STATE FOR THE LOGIN SECTION
   //for login email
@@ -70,12 +84,21 @@ const Login = () => {
               </div>
               <div className="formContent">
                 <label>Password</label>
-                <input
-                  type="password"
-                  required
-                  value={logPassword}
-                  onChange={(e) => setLogPassword(e.target.value)}
-                />
+                <div className="passwordInput">
+                  <input
+                    type={revealPassword ? "text" : "password"}
+                    required
+                    value={logPassword}
+                    onChange={(e) => setLogPassword(e.target.value)}
+                  />
+                  <p onClick={handleRevealPassword}>
+                    {revealPassword ? (
+                      <AiOutlineEyeInvisible />
+                    ) : (
+                      <AiOutlineEye />
+                    )}
+                  </p>
+                </div>
               </div>
               <div className="signInCAL">
                 <button type="submit" className="btn loginbtn">
@@ -201,6 +224,17 @@ const SignIn = styled.div`
   p,
   a {
     color: var(--primary);
+  }
+  .passwordInput {
+    position: relative;
+    display: flex;
+    align-items: center;
+    p {
+      position: absolute;
+      right: 0.8rem;
+      top: 0.4rem;
+      cursor: pointer;
+    }
   }
   @media screen and (max-width: 1200px) {
     width: 100%;

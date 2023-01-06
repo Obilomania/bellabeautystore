@@ -1,17 +1,20 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import {
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { toast } from "react-toastify";
 import { auth } from "../../firebase/Config";
 import Loader from "../../components/Loader";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const Register = () => {
   // STATE FOR THE REGISTRATION SECTION
   const [isLoading, setIsLoading] = useState(false);
+  const [revealPassword, setRevealPassword] = useState(false);
+  const handleRevealPassword = () => {
+    setRevealPassword(!revealPassword);
+  };
 
   //For the Email
   const [email, setEmail] = useState("");
@@ -20,7 +23,6 @@ const Register = () => {
   //For the Confirm Password
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
-  
 
   const registerUser = (e) => {
     e.preventDefault();
@@ -67,22 +69,40 @@ const Register = () => {
 
             <div className="formContent">
               <label htmlFor="">Password:</label>
-              <input
-                type="Password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <div className="passwordInput">
+                <input
+                  type={revealPassword ? "text" : "password"}
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <p onClick={handleRevealPassword}>
+                  {revealPassword ? (
+                    <AiOutlineEyeInvisible />
+                  ) : (
+                    <AiOutlineEye />
+                  )}
+                </p>
+              </div>
             </div>
 
             <div className="formContent">
               <label htmlFor="">Confirm Password:</label>
-              <input
-                type="password"
-                required
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
+              <div className="passwordInput">
+                <input
+                  type={revealPassword ? "text" : "password"}
+                  required
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+                <p onClick={handleRevealPassword}>
+                  {revealPassword ? (
+                    <AiOutlineEyeInvisible />
+                  ) : (
+                    <AiOutlineEye />
+                  )}
+                </p>
+              </div>
             </div>
 
             <button type="submit" className="btn regBtn">
@@ -148,7 +168,17 @@ const SignUp = styled.div`
     width: 25rem;
     margin: 0.5rem 0;
   }
-
+  .passwordInput {
+    position: relative;
+    display: flex;
+    align-items: center;
+    p {
+      position: absolute;
+      right: 0.8rem;
+      top: 0.4rem;
+      cursor: pointer;
+    }
+  }
   @media screen and (max-width: 1200px) {
   }
   @media screen and (max-width: 1024px) {
