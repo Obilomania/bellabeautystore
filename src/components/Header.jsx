@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { BsCart3 } from "react-icons/bs";
+import { FaUserCircle } from "react-icons/fa";
 import { AiOutlineClose, AiOutlineBars } from "react-icons/ai";
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { toast } from "react-toastify";
 import { auth } from "../firebase/Config";
 
@@ -21,6 +22,8 @@ const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const toggleNav = () => setShowNav(!showNav);
   const closeNav = () => setShowNav(!showNav);
+  const [userName, setUserName] = useState("");
+
   const navigate = useNavigate();
   //Log out Function
   const logoutUser = () => {
@@ -33,6 +36,24 @@ const Header = () => {
         toast.error(error.message);
       });
   };
+
+  //Function to Monitor When a user is signed in by Firebase
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+       if (user.displayName == null) {
+         const u1 = user.email.substring(0, user.email.indexOf("@"));
+         const uCapName = u1.charAt(0).toUpperCase() + u1.slice(1);
+         setUserName(uCapName);
+       } else {
+         setUserName(user.displayName);
+       }
+      } else {
+        setUserName("");
+      }
+    });
+  }, []);
+
   return (
     <Nav>
       <div className="navBar">
@@ -66,6 +87,12 @@ const Header = () => {
             </li>
             <li onClick={closeNav}>
               <NavLink to="/login">Login</NavLink>
+            </li>
+            <li>
+              <a href="">
+                <FaUserCircle size={16} />
+                Hi, {userName}
+              </a>
             </li>
             <li onClick={closeNav}>
               <NavLink to="/register">Register</NavLink>

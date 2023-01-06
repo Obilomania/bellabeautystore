@@ -28,19 +28,23 @@ const Register = () => {
     e.preventDefault();
     if (password !== confirmPassword) {
       toast.error("Password does not match");
+    } else if (!password || !confirmPassword) {
+      toast.error("Please enter Password");
     }
-    setIsLoading(true);
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        setIsLoading(false);
-        toast.success("Registration Successful..");
-        navigate("/login");
-      })
-      .catch((error) => {
-        toast.error(error.message);
-        setIsLoading(false);
-      });
+    else {
+      setIsLoading(true);
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          setIsLoading(false);
+          toast.success("Registration Successful..");
+          navigate("/login");
+        })
+        .catch((error) => {
+          toast.error(error.message);
+          setIsLoading(false);
+        });
+    }
   };
 
   return (
