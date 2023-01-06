@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import {
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
+import { toast } from "react-toastify";
+import { auth } from "../../firebase/Config";
+import Loader from "../../components/Loader";
 
 const Register = () => {
   // STATE FOR THE REGISTRATION SECTION
-  //For the FullName
-  const [fullName, setFullName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
   //For the Email
   const [email, setEmail] = useState("");
   //For the Password
@@ -14,12 +20,30 @@ const Register = () => {
   //For the Confirm Password
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
+  
+
   const registerUser = (e) => {
     e.preventDefault();
+    if (password !== confirmPassword) {
+      toast.error("Password does not match");
+    }
+    setIsLoading(true);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        setIsLoading(false);
+        toast.success("Registration Successful..");
+        navigate("/login");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+        setIsLoading(false);
+      });
   };
+
   return (
     <SignUp>
-      {" "}
+      {isLoading && <Loader />}
       <div className="register">
         <h3>Register</h3>
         <div className="regContent">
@@ -31,16 +55,6 @@ const Register = () => {
             />
           </div>
           <form action="" onSubmit={registerUser}>
-            <div className="formContent">
-              <label htmlFor="">Full Name:</label>
-              <input
-                type="text"
-                required
-                value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
-              />
-            </div>
-
             <div className="formContent">
               <label htmlFor="">Email:</label>
               <input
@@ -134,6 +148,7 @@ const SignUp = styled.div`
     width: 25rem;
     margin: 0.5rem 0;
   }
+
   @media screen and (max-width: 1200px) {
   }
   @media screen and (max-width: 1024px) {

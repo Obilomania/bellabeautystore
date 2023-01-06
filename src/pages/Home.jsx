@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Loader from "../components/Loader";
 
 const Home = () => {
   return (
-    <div>Hello World</div>
-  )
-}
+    <div>
+      {/* <Loader /> */}
+    </div>
+  );
+};
 
-export default Home
+export default Home;

@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { BsCart3 } from "react-icons/bs";
 import { AiOutlineClose, AiOutlineBars } from "react-icons/ai";
+import { signOut } from "firebase/auth";
+import { toast } from "react-toastify";
+import { auth } from "../firebase/Config";
 
 const cart = (
   <div className="cart">
@@ -18,6 +21,18 @@ const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const toggleNav = () => setShowNav(!showNav);
   const closeNav = () => setShowNav(!showNav);
+  const navigate = useNavigate();
+  //Log out Function
+  const logoutUser = () => {
+    signOut(auth)
+      .then(() => {
+        toast.success("LogOut Successful..");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
   return (
     <Nav>
       <div className="navBar">
@@ -54,6 +69,11 @@ const Header = () => {
             </li>
             <li onClick={closeNav}>
               <NavLink to="/register">Register</NavLink>
+            </li>
+            <li onClick={closeNav}>
+              <NavLink to="/home" onClick={logoutUser}>
+                LogOut
+              </NavLink>
             </li>
           </ul>
         </div>

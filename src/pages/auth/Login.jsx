@@ -1,36 +1,93 @@
-import React from "react";
+import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import React, { useState } from "react";
 import { AiOutlineGoogle } from "react-icons/ai";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import styled from "styled-components";
+import Loader from "../../components/Loader";
+import { auth } from "../../firebase/Config";
+import ResetPassword from "./ResetPassword";
 
 const Login = () => {
+  const [modal, setModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+  // STATE FOR THE LOGIN SECTION
+  //for login email
+  const [logEmail, setLogEmail] = useState("");
+  //for login password
+  const [logPassword, setLogPassword] = useState("");
+
+  //Login User Function
+  const loginUser = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    signInWithEmailAndPassword(auth, logEmail, logPassword)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        setIsLoading(false);
+        toast.success("Sign In Successful..");
+        navigate("/");
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        toast.error(error.message);
+      });
+  };
+
+  //Login user with google function
+  const provider = new GoogleAuthProvider();
+  const googleSignIn = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // const user = result.user;
+        toast.success("Login successful...");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
+
   return (
     <SignIn>
+      {isLoading && <Loader />}
       <div className="login">
         <h3>Sign In</h3>
         <div className="signContent">
           <div className="form">
-            <form action="">
+            <form onSubmit={loginUser}>
               <div className="formContent">
                 <label>Email</label>
-                <input type="text" required />
+                <input
+                  type="email"
+                  required
+                  value={logEmail}
+                  onChange={(e) => setLogEmail(e.target.value)}
+                />
               </div>
               <div className="formContent">
                 <label>Password</label>
-                <input type="Password" required />
+                <input
+                  type="password"
+                  required
+                  value={logPassword}
+                  onChange={(e) => setLogPassword(e.target.value)}
+                />
               </div>
               <div className="signInCAL">
                 <button type="submit" className="btn loginbtn">
                   Log in
                 </button>
-                <p>
-                  <Link to="/reset-password">Forgot Password?</Link>
+                <p className="forget" onClick={() => setModal(true)}>
+                  Forgot Password?
                 </p>
                 <div className="orPass">
                   <hr /> or <hr />
                 </div>
-                <button className="googleSign btn">
+                <button className="googleSign btn" onClick={googleSignIn}>
                   <AiOutlineGoogle color="white" size={25} />
                   Login With Google
                 </button>
@@ -52,13 +109,14 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ResetPassword reveal={modal} hidden={() => setModal(false)} />
     </SignIn>
   );
 };
 
 const SignIn = styled.div`
   width: 100%;
-  height: 70vh;
+  height: 80vh;
   position: relative;
   h3 {
     text-align: center;
@@ -71,6 +129,7 @@ const SignIn = styled.div`
     width: 70%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: auto;
     padding-top: 3rem;
   }
@@ -99,7 +158,7 @@ const SignIn = styled.div`
     }
     input {
       width: 25rem;
-      padding: .5rem;
+      padding: 0.5rem;
       border-radius: 0.3rem;
       border: 1px solid var(--primary);
     }
@@ -130,6 +189,9 @@ const SignIn = styled.div`
     justify-content: center;
     gap: 0.5rem;
     margin-bottom: 0.5rem;
+  }
+  .forget {
+    cursor: pointer;
   }
   hr {
     background: var(--background);
