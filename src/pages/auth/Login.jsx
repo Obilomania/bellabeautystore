@@ -40,7 +40,7 @@ const Login = () => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, logEmail, logPassword)
       .then((userCredential) => {
-        const user = userCredential.user;
+        // const user = userCredential.user;
         setIsLoading(false);
         toast.success("Sign In Successful..");
         navigate("/");
@@ -107,13 +107,7 @@ const Login = () => {
                 <p className="forget" onClick={() => setModal(true)}>
                   Forgot Password?
                 </p>
-                <div className="orPass">
-                  <hr /> or <hr />
-                </div>
-                <button className="googleSign btn" onClick={googleSignIn}>
-                  <AiOutlineGoogle color="white" size={25} />
-                  Login With Google
-                </button>
+
                 <p>
                   Dont have an account?{" "}
                   <b>
@@ -121,7 +115,16 @@ const Login = () => {
                   </b>{" "}
                 </p>
               </div>
-            </form>
+            </form> <br />
+            <div className="orPass">
+              <hr /> or <hr />
+            </div>
+            <br />
+
+            <button className="googleSign btn" onClick={googleSignIn}>
+              <AiOutlineGoogle color="white" size={25} />
+              Login With Google
+            </button>
           </div>
           <div className="imageBG">
             <LazyLoadImage

@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { BsCart3 } from "react-icons/bs";
 import { FaUserCircle } from "react-icons/fa";
 import { AiOutlineClose, AiOutlineBars } from "react-icons/ai";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { toast } from "react-toastify";
 import { auth } from "../firebase/Config";
+import { useDispatch } from "react-redux";
+import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from "../redux/slice/authSlice";
+import ShowOnLogin, { ShowOnLogout } from "./HiddenLink";
+import { AdminLink } from "./AdminRoute";
 
-const cart = (
-  <div className="cart">
-    <Link to="/cart">
-      <BsCart3 size={20} className="icons" /> <p>0</p>
-    </Link>
-  </div>
-);
+
 
 const activeLink = ({ isActive }) => (isActive ? "active" : "");
 
@@ -23,6 +20,7 @@ const Header = () => {
   const toggleNav = () => setShowNav(!showNav);
   const closeNav = () => setShowNav(!showNav);
   const [userName, setUserName] = useState("");
+  const dispatch = useDispatch();
 
   const navigate = useNavigate();
   //Log out Function
@@ -41,18 +39,26 @@ const Header = () => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-       if (user.displayName == null) {
-         const u1 = user.email.substring(0, user.email.indexOf("@"));
-         const uCapName = u1.charAt(0).toUpperCase() + u1.slice(1);
-         setUserName(uCapName);
-       } else {
-         setUserName(user.displayName);
-       }
+        if (user.displayName == null) {
+          const u1 = user.email.substring(0, user.email.indexOf("@"));
+          const uCapName = u1.charAt(0).toUpperCase() + u1.slice(1);
+          setUserName(uCapName);
+        } else {
+          setUserName(user.displayName);
+        }
+        dispatch(
+          SET_ACTIVE_USER({
+            email: user.email,
+            userName: user.displayName ? user.displayName : userName,
+            userID: user.uid,
+          })
+        );
       } else {
         setUserName("");
+        dispatch(REMOVE_ACTIVE_USER());
       }
     });
-  }, []);
+  }, [dispatch, userName]);
 
   return (
     <Nav>
@@ -69,10 +75,25 @@ const Header = () => {
         <div className={showNav ? "navLinks" : "navLinksClose"}>
           <ul>
             <li onClick={closeNav}>
+              <AdminLink>
+                <Link to="/admin/home" className="adminBtn">
+                  Admin
+                </Link>
+              </AdminLink>
+            </li>
+            <li onClick={closeNav}>
               <NavLink to="/" className={activeLink}>
                 Home
               </NavLink>
             </li>
+            <ShowOnLogin>
+              <li>
+                <a href="#home" className="userNameTag">
+                  <FaUserCircle size={16} />
+                  Hi, {userName}
+                </a>
+              </li>
+            </ShowOnLogin>
             <li onClick={closeNav}>
               <NavLink to="/about">About</NavLink>
             </li>
@@ -80,32 +101,28 @@ const Header = () => {
               <NavLink to="/products">Products</NavLink>
             </li>
             <li onClick={closeNav}>
-              <NavLink to="/my-orders">My Orders</NavLink>
-            </li>
-            <li onClick={closeNav}>
               <NavLink to="/contact">Contact</NavLink>
             </li>
-            <li onClick={closeNav}>
-              <NavLink to="/login">Login</NavLink>
-            </li>
-            <li>
-              <a href="">
-                <FaUserCircle size={16} />
-                Hi, {userName}
-              </a>
-            </li>
-            <li onClick={closeNav}>
-              <NavLink to="/register">Register</NavLink>
-            </li>
-            <li onClick={closeNav}>
-              <NavLink to="/home" onClick={logoutUser}>
-                LogOut
-              </NavLink>
-            </li>
+            <ShowOnLogout>
+              <li onClick={closeNav}>
+                <NavLink to="/login">Login</NavLink>
+              </li>
+
+              <li onClick={closeNav}>
+                <NavLink to="/register">Register</NavLink>
+              </li>
+            </ShowOnLogout>
+            <ShowOnLogin>
+              <li onClick={closeNav}>
+                <NavLink to="/home" onClick={logoutUser}>
+                  LogOut
+                </NavLink>
+              </li>
+            </ShowOnLogin>
           </ul>
         </div>
         <div className="endNav">
-          {cart}
+          {/* {cart} */}
           <div className="hamburger">
             <p onClick={toggleNav}>
               {showNav ? (
@@ -142,6 +159,12 @@ const Nav = styled.div`
   }
   .logo h2 {
     color: var(--white);
+  }
+  .adminBtn {
+    color: white;
+    background: red;
+    padding: 0.3rem 1rem;
+    border-radius: 0.7rem;
   }
   a {
     color: var(--white);
@@ -181,6 +204,9 @@ const Nav = styled.div`
   }
   .hamburger {
     display: none;
+  }
+  .userNameTag {
+    font-weight: 600;
   }
   @media screen and (max-width: 1200px) {
     width: 100%;
