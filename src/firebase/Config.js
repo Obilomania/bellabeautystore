@@ -6,12 +6,12 @@ import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 export const firebaseConfig = {
-  apiKey: "AIzaSyBnQJkooySgvdY8eBX5sV-3Qyv7QUWuYJw",
-  authDomain: "bellaestore-62176.firebaseapp.com",
-  projectId: "bellaestore-62176",
-  storageBucket: "bellaestore-62176.appspot.com",
-  messagingSenderId: "1086237485977",
-  appId: "1:1086237485977:web:e2a6e45fd34a7750a64108",
+  apiKey: "AIzaSyBAY_xn_P8b1IljZrAIZGr4e-dYEb0O3Eg",
+  authDomain: "bella-beauty-fad0f.firebaseapp.com",
+  projectId: "bella-beauty-fad0f",
+  storageBucket: "bella-beauty-fad0f.appspot.com",
+  messagingSenderId: "24902294406",
+  appId: "1:24902294406:web:9d2422f7047a2b67e4ea07",
 };
 
 // Initialize Firebase
