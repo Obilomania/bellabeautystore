@@ -11,8 +11,6 @@ import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from "../redux/slice/authSlice";
 import ShowOnLogin, { ShowOnLogout } from "./HiddenLink";
 import { AdminLink } from "./AdminRoute";
 
-
-
 const activeLink = ({ isActive }) => (isActive ? "active" : "");
 
 const Header = () => {
@@ -98,19 +96,19 @@ const Header = () => {
               <NavLink to="/about">About</NavLink>
             </li>
             <li onClick={closeNav}>
-              <NavLink to="/products">Products</NavLink>
+              <NavLink to="/products">All Products</NavLink>
             </li>
             <li onClick={closeNav}>
               <NavLink to="/contact">Contact</NavLink>
             </li>
             <ShowOnLogout>
-              <li onClick={closeNav}>
+              {/* <li onClick={closeNav}>
                 <NavLink to="/login">Login</NavLink>
               </li>
 
               <li onClick={closeNav}>
                 <NavLink to="/register">Register</NavLink>
-              </li>
+              </li> */}
             </ShowOnLogout>
             <ShowOnLogin>
               <li onClick={closeNav}>
@@ -147,6 +145,10 @@ const Nav = styled.div`
   height: 8vh;
   background: var(--background);
   color: var(--white);
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
 
   li {
     list-style: none;
@@ -169,6 +171,7 @@ const Nav = styled.div`
   a {
     color: var(--white);
     transition: var(--transition);
+    text-decoration: none;
   }
   a:hover {
     color: var(--lightVariant);
@@ -249,7 +252,7 @@ const Nav = styled.div`
       height: 100vh;
       gap: 4rem;
       transition: var(--transition);
-      z-index: 2;
+      z-index: 10;
       border-right: 1px solid white;
       border-bottom: 1px solid white;
     }
@@ -267,6 +270,7 @@ const Nav = styled.div`
       height: 100vh;
       gap: 4rem;
       transition: var(--transition);
+      z-index: 10;
     }
     .cart a {
       display: flex;
@@ -303,7 +307,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 1;
       transition: var(--transition);
-      z-index: 1;
+      z-index: 9;
       cursor: pointer;
     }
     .closeNavOverlay {
@@ -316,7 +320,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 0;
       transition: var(--transition);
-      z-index: 1;
+      z-index: 9;
       cursor: pointer;
     }
   }
@@ -361,7 +365,7 @@ const Nav = styled.div`
       height: 100vh;
       gap: 3rem;
       transition: var(--transition);
-      z-index: 2;
+      z-index: 10;
       border-right: 1px solid white;
       border-bottom: 1px solid white;
     }
@@ -379,6 +383,7 @@ const Nav = styled.div`
       height: 100vh;
       gap: 3rem;
       transition: var(--transition);
+      z-index: 10;
     }
     .cart a {
       display: flex;
@@ -415,7 +420,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 1;
       transition: var(--transition);
-      z-index: 1;
+      z-index: 9;
       cursor: pointer;
     }
     .closeNavOverlay {
@@ -428,7 +433,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 0;
       transition: var(--transition);
-      z-index: 1;
+      z-index: 9;
       cursor: pointer;
     }
   }
@@ -473,7 +478,7 @@ const Nav = styled.div`
       height: 70vh;
       gap: 4rem;
       transition: var(--transition);
-      z-index: 2;
+      z-index: 10;
       border-right: 1px solid white;
       border-bottom: 1px solid white;
     }
@@ -491,6 +496,7 @@ const Nav = styled.div`
       height: 70vh;
       gap: 4rem;
       transition: var(--transition);
+      z-index: 10;
     }
     .cart a {
       display: flex;
@@ -527,7 +533,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 1;
       transition: var(--transition);
-      z-index: 1;
+      z-index: 9;
       cursor: pointer;
     }
     .closeNavOverlay {
@@ -540,7 +546,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 0;
       transition: var(--transition);
-      z-index: 1;
+      z-index: 9;
       cursor: pointer;
     }
   }
@@ -586,7 +592,7 @@ const Nav = styled.div`
       gap: 2rem;
       padding-top: 1rem;
       transition: var(--transition);
-      z-index: 2;
+      z-index: 10;
       border-right: 1px solid white;
       border-bottom: 1px solid white;
     }
@@ -605,6 +611,7 @@ const Nav = styled.div`
       gap: 2rem;
       padding-top: 1rem;
       transition: var(--transition);
+      z-index: 10;
     }
     .cart a {
       display: flex;
@@ -642,7 +649,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 1;
       transition: var(--transition);
-      z-index: 1;
+      z-index: 9;
       cursor: pointer;
     }
     .closeNavOverlay {
@@ -655,7 +662,7 @@ const Nav = styled.div`
       background: rgba(0, 0, 0, 0.5);
       opacity: 0;
       transition: var(--transition);
-      z-index: 1;
+      z-index: 9;
       cursor: pointer;
     }
   }

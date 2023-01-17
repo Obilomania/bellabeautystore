@@ -7,6 +7,7 @@ import { Home, About, Contact } from "./pages";
 import { Login, Register, ResetPassword } from "./pages/auth";
 import { Admin } from "./pages/admin/index";
 import AdminRoute from "./components/AdminRoute";
+import Products from "./pages/Products";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/logInsideTheApp" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route
