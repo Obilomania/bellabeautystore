@@ -1,4 +1,5 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -16,7 +17,7 @@ const ProductItem = ({ grid, product, id, name, price, desc, imageURL }) => {
       <Link to={`/product-details/${id}`}>
         <div className={grid ? "grid" : "list"}>
           <div className="img">
-            <img src={imageURL} alt="{name}" />
+            <LazyLoadImage src={imageURL} alt={imageURL.name} effect="blur"/>
           </div>
           <div className="content">
             <div className="details">
@@ -378,7 +379,7 @@ const ProdItem = styled.div`
         position: absolute;
         display: flex;
         flex-direction: column;
-        gap: .5rem;
+        gap: 0.5rem;
         bottom: 0;
         left: -0.4rem;
       }
@@ -461,6 +462,108 @@ const ProdItem = styled.div`
         border-radius: 0.5rem 0.5rem 0rem 0rem;
         width: 10rem;
         height: 5rem;
+      }
+      h4 {
+        font-size: 0.7rem;
+        text-align: center;
+      }
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.1rem 0rem;
+        width: 10rem;
+        background: var(--primary);
+        color: var(--white);
+        font-size: 0.7rem;
+      }
+      .content {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        bottom: 0;
+        left: -0.4rem;
+      }
+    }
+
+    .list {
+      width: 100%;
+      height: 9rem;
+      display: flex;
+      background-color: #fff;
+      margin: 1rem 0;
+      border-bottom: 0.1rem solid lightgray;
+      border-radius: 0.5rem;
+      .img {
+        width: 9rem;
+        height: 9rem;
+        overflow: hidden;
+        border-right: 2px solid #eee;
+        img {
+          width: 10rem;
+          height: 10rem;
+          cursor: pointer;
+        }
+      }
+
+      .content {
+        position: relative;
+        padding: 1rem;
+        width: 85%;
+        .details {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 1rem;
+          h4 {
+            font-weight: 400;
+          }
+          p {
+            font-weight: 500;
+            color: red;
+          }
+        }
+        button {
+          position: absolute;
+          bottom: 0;
+          left: 1rem;
+          width: 100%;
+          background-color: red;
+          border: none;
+          padding: 0.1rem 0;
+          border-radius: 0.5rem;
+          color: white;
+          margin-bottom: 1rem;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 380px) {
+    a {
+      text-decoration: none;
+    }
+    .grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 9rem;
+      height: 10rem;
+      overflow: hidden;
+      border: 0.1px solid var(--primary);
+      padding: 0;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      position: relative;
+      /* padding: 0rem 0rem 2rem 0rem; */
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 0.5rem 0.5rem 0rem 0rem;
+        width: 9rem;
+        height: 5.8rem;
       }
       h4 {
         font-size: 0.7rem;

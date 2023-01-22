@@ -8,6 +8,7 @@ import { Login, Register, ResetPassword } from "./pages/auth";
 import { Admin } from "./pages/admin/index";
 import AdminRoute from "./components/AdminRoute";
 import Products from "./pages/product/Products";
+import ProductDetail from "./pages/product/ProductDetail";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             </AdminRoute>
           }
         />
+        <Route path="/product-details/:id" element={<ProductDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>

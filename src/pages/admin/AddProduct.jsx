@@ -217,7 +217,7 @@ const AddProduct = () => {
             rows="5"
           ></textarea>
 
-          <label>Third benefit:</label>
+          <label>First benefit:</label>
           <textarea
             name="benefit1"
             value={product.benefit1}
