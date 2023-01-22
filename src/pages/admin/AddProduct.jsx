@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { storage, db } from "../../firebase/Config";
 import { addDoc, collection, doc, setDoc, Timestamp } from "firebase/firestore";
 import {
-  getStorage,
   ref,
   uploadBytesResumable,
   getDownloadURL,
@@ -133,11 +132,11 @@ const AddProduct = () => {
         benefit2: product.benefit2,
         benefit3: product.benefit3,
         createdAt: productEdit.createdAt,
-        editedAt: Timestamp.now().toDate(),  
+        editedAt: Timestamp.now().toDate(),
       });
-      setIsLoading(true)
-      toast.success("product Edited successfully")
-      navigate("/admin/products")
+      setIsLoading(true);
+      toast.success("product Edited successfully");
+      navigate("/admin/products");
     } catch (error) {
       toast.error(error.message);
     }
@@ -259,6 +258,8 @@ const AddProduct = () => {
 };
 const Product = styled.div`
   display: flex;
+  justify-content: space-around;
+  /* padding: 7rem 10rem; */
   gap: 3rem;
   width: 100%;
   .image {
@@ -273,7 +274,6 @@ const Product = styled.div`
   }
   .card {
     width: 100%;
-    max-width: 500px;
     padding: 1rem;
   }
   label {

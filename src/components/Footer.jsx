@@ -72,8 +72,9 @@ const Foot = styled.div`
   }
   p,
   a {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
   }
   @media screen and (max-width: 940px) {
     width: 100%;

@@ -1,13 +1,8 @@
 import {
-  collection,
   deleteDoc,
-  doc,
-  onSnapshot,
-  orderBy,
-  query,
-  where,
+  doc
 } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import styled from "styled-components";
@@ -15,39 +10,22 @@ import { db, storage } from "../../firebase/Config";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import { deleteObject, ref } from "firebase/storage";
 import Notiflix from "notiflix";
-import { useDispatch } from "react-redux";
-import { STORE_PRODUCTS } from "../../redux/slice/productSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectProducts, STORE_PRODUCTS } from "../../redux/slice/productSlice";
+import useFetchCollection from "../../customHooks/useFetchCollection";
+import Loader from "../../components/Loader";
 
 const ViewProducts = () => {
-  const dispatch = useDispatch()
-  const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const { data, isLoading } = useFetchCollection("products");
+  const products = useSelector(selectProducts);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    getProducts();
-  }, []);
+    dispatch(STORE_PRODUCTS({ products: data }));
+  },[dispatch, data]);
 
-  const getProducts = () => {
-    setIsLoading(true);
-    try {
-      const productsRef = collection(db, "products");
-      const q = query(productsRef, orderBy("createdAt", "desc"));
-      onSnapshot(q, (snapshot) => {
-        const allProducts = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setProducts(allProducts);
-        setIsLoading(false);
-        dispatch(STORE_PRODUCTS(
-          {products : allProducts }
-        ))
-      });
-    } catch (error) {
-      setIsLoading(false);
-      toast.error(error.message);
-    }
-  };
+
+
 
   const deleteProduct = async (id, imageURL) => {
     try {
@@ -84,7 +62,7 @@ const ViewProducts = () => {
   };
 
   return (
-    <Products>
+    <Products>{isLoading && <Loader/>}
       <div className="table">
         <h1>All products</h1>
         {products.length === 0 ? (

@@ -159,6 +159,7 @@ const ContactPage = styled.div`
     justify-content: start;
     gap: 0.5rem;
     color: var(--primary);
+    text-decoration: none;
   }
   @media screen and (max-width: 940px) {
     width: 100%;

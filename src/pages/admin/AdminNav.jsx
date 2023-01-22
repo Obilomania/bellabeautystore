@@ -34,8 +34,6 @@ const AdminNav = () => {
               Add Products
             </NavLink>
           </li>
-
-
         </ul>
       </nav>
     </AdNav>
@@ -44,9 +42,13 @@ const AdminNav = () => {
 
 const AdNav = styled.div`
   position: relative;
+  top:0;
   height: 90vh;
   border-right: 1px solid var(--white);
-  height: 90vh;
+  width:100%;
+  li {
+    list-style: none;
+  }
   .user {
     display: flex;
     flex-direction: column;
@@ -78,7 +80,7 @@ const AdNav = styled.div`
     width: 100%;
     transition: 400ms all ease;
     font-weight: 600;
-    color:var(--primary)
+    color: var(--primary);
   }
   a:hover {
     color: red;

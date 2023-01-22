@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const FaqSection = () => {
   return (
-    <Faq>
+    <Faq id="Faq">
       <h2 className="text-center">Frequently Asked Questions</h2> <br />
       <Accordion>
         <Accordion.Item eventKey="0">

@@ -7,7 +7,7 @@ import { Home, About, Contact } from "./pages";
 import { Login, Register, ResetPassword } from "./pages/auth";
 import { Admin } from "./pages/admin/index";
 import AdminRoute from "./components/AdminRoute";
-import Products from "./pages/Products";
+import Products from "./pages/product/Products";
 
 function App() {
   return (

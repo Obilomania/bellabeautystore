@@ -26,12 +26,13 @@ const Admin = () => {
 };
 
 const Administrator = styled.div`
+  padding-top: 8vh;
   .admin {
     display: flex;
   }
   .navbar {
     width: 25%;
-    min-height: 80vh;
+    /* min-height: 80vh; */
   }
   .content {
     width: 75%;

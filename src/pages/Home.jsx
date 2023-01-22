@@ -4,6 +4,7 @@ import Benefits from "../pageSections/benefits/Benefits";
 import FaqSection from "../pageSections/FaqSection";
 import FeaturedProducts from "../pageSections/FeaturedProducts";
 import HomeLandingSlider from "../pageSections/HomeSlider/HomeLandingSlider";
+import Review from "../pageSections/Review";
 
 const Home = () => {
   return (
@@ -11,7 +12,8 @@ const Home = () => {
       <HomeLandingSlider />
       <FeaturedProducts />
       <Benefits />
-      <FaqSection/>
+      <FaqSection />
+      <Review />
     </Land>
   );
 };
