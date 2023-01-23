@@ -215,30 +215,23 @@ const Featured = styled.div`
       box-shadow: 1rem 1rem 1rem -1rem #1d8725;
       cursor: pointer;
       h4 {
-        display: none;
+        display: block;
+        z-index: 4;
+        color: var(--white);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
       }
       .overlay {
-        transition: var(--transition);
-      }
-      &:hover {
-        .overlay {
-          width: 358px;
-          height: 15rem;
-          background: rgba(0, 0, 0, 0.7);
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-        h4 {
-          display: block;
-          z-index: 4;
-          color: var(--white);
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          text-align: center;
-        }
+        width: 10rem;
+        height: 2rem;
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
     img {
@@ -249,7 +242,7 @@ const Featured = styled.div`
   @media screen and (max-width: 1024px) {
     width: 100%;
     padding: 1rem;
-    height:fit-content;
+    height: fit-content;
     .feat-container {
       width: 100%;
       display: flex;
@@ -268,30 +261,23 @@ const Featured = styled.div`
       box-shadow: 1rem 1rem 1rem -1rem #1d8725;
       cursor: pointer;
       h4 {
-        display: none;
+        display: block;
+        z-index: 4;
+        color: var(--white);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
       }
       .overlay {
-        transition: var(--transition);
-      }
-      &:hover {
-        .overlay {
-          width: 358px;
-          height: 15rem;
-          background: rgba(0, 0, 0, 0.7);
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-        h4 {
-          display: block;
-          z-index: 4;
-          color: var(--white);
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          text-align: center;
-        }
+        width: 10rem;
+        height: 2rem;
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
     img {
@@ -302,7 +288,7 @@ const Featured = styled.div`
   @media screen and (max-width: 600px) {
     width: 100%;
     padding: 1rem;
-    height:fit-content;
+    height: fit-content;
     .feat-container {
       width: 100%;
       display: flex;
@@ -321,34 +307,27 @@ const Featured = styled.div`
       box-shadow: 1rem 1rem 1rem -1rem #1d8725;
       cursor: pointer;
       h4 {
-        display: none;
+        display: block;
+        z-index: 4;
+        color: var(--white);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
       }
       .overlay {
-        transition: var(--transition);
-      }
-      &:hover {
-        .overlay {
-          width: 358px;
-          height: 15rem;
-          background: rgba(0, 0, 0, 0.7);
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-        h4 {
-          display: block;
-          z-index: 4;
-          color: var(--white);
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          text-align: center;
-        }
+        width: 10rem;
+        height: 2rem;
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
     img {
-      width: 323px;
+      width: 382px;
       height: 15rem;
     }
   }
@@ -374,30 +353,23 @@ const Featured = styled.div`
       box-shadow: 1rem 1rem 1rem -1rem #1d8725;
       cursor: pointer;
       h4 {
-        display: none;
+        display: block;
+        z-index: 4;
+        color: var(--white);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
       }
       .overlay {
-        transition: var(--transition);
-      }
-      &:hover {
-        .overlay {
-          width: 358px;
-          height: 15rem;
-          background: rgba(0, 0, 0, 0.7);
-          position: absolute;
-          top: 0;
-          left: 0;
-        }
-        h4 {
-          display: block;
-          z-index: 4;
-          color: var(--white);
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          text-align: center;
-        }
+        width: 10rem;
+        height: 2rem;
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
     img {
