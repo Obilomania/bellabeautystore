@@ -8,7 +8,7 @@ const Search = ({ value, onChange }) => {
       <div className="search">
         <input
           type="text"
-          placeholder="search by name"
+          placeholder="search by name or category"
           value={value}
           onChange={onChange}
         />

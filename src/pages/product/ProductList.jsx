@@ -1,18 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { BsFillGridFill } from "react-icons/bs";
 import { FaListAlt } from "react-icons/fa";
 import Search from "../../components/Search";
 import { useDispatch, useSelector } from "react-redux";
 import ProductItem from "./ProductItem";
+import {
+  FILTER_BY_SEARCH, SORT_PRODUCTS,
+  selectFilteredProducts,
+} from "../../redux/slice/filterSlice";
 
 const ProductList = ({ products }) => {
   const [grid, setGrid] = useState(true);
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("Latest");
-  // const filteredProducts = useSelector(selectFilteredProducts);
-
+  const filteredProducts = useSelector(selectFilteredProducts);
   const dispatch = useDispatch();
+
+
+  useEffect(() => {
+    dispatch(SORT_PRODUCTS({products, sort }));
+  }, [dispatch, products, sort]);
+
+  
+
+  useEffect(() => {
+    dispatch(FILTER_BY_SEARCH({ products, search }));
+  }, [dispatch, products, search]);
+
+
 
   return (
     <PList>
@@ -21,7 +37,7 @@ const ProductList = ({ products }) => {
           <BsFillGridFill size={22} color="red" onClick={() => setGrid(true)} />
           <FaListAlt size={24} color="#1d8725" onClick={() => setGrid(false)} />
           <p>
-            <b>10 </b>products Found
+            <b>{filteredProducts.length } </b>products Found
           </p>
         </div>
         <div>
@@ -42,10 +58,7 @@ const ProductList = ({ products }) => {
           <p>No Product Found...</p>
         ) : (
           <>
-            {products.map((product) => {
-              {
-                /* const {} = product; */
-              }
+            {filteredProducts.map((product) => {
               return (
                 <div key={product.id}>
                   <ProductItem {...product} grid={grid} product={product} />

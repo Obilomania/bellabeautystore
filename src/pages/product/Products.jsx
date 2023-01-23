@@ -5,18 +5,16 @@ import useFetchCollection from "../../customHooks/useFetchCollection";
 import { selectProducts, STORE_PRODUCTS } from "../../redux/slice/productSlice";
 import ProductList from "./ProductList";
 import ProductsFilter from "./ProductsFilter";
-import Spinner from "../../assets/Spinner.gif"
-
+import Spinner from "../../assets/Spinner.gif";
 
 const Products = () => {
   const { data, isLoading } = useFetchCollection("products");
   const products = useSelector(selectProducts);
   const dispatch = useDispatch();
 
-    useEffect(() => {
-      dispatch(STORE_PRODUCTS({ products: data }));
-    }, [dispatch, data]);
-
+  useEffect(() => {
+    dispatch(STORE_PRODUCTS({ products: data }));
+  }, [dispatch, data]);
 
   return (
     <ProductSection>
@@ -40,15 +38,14 @@ const Products = () => {
   );
 };
 const ProductSection = styled.div`
-width:100%;
-
+  width: 100%;
+  height: 100vh;
   .product {
     display: flex;
     position: relative;
   }
   .filter {
     width: 20%;
-    // border: 2px solid var(--dark-blue);
     transition: all 0.3s;
   }
 
@@ -81,10 +78,10 @@ width:100%;
   @media screen and (max-width: 1200px) {
     .product {
       display: flex;
-      flex-direction:column;
-      align-items:center;
+      flex-direction: column;
+      align-items: center;
       position: relative;
-      width:100%;
+      width: 100%;
     }
     .filter {
       width: 20%;
@@ -122,10 +119,10 @@ width:100%;
   @media screen and (max-width: 1024px) {
     .product {
       display: flex;
-      flex-direction:column;
-      align-items:center;
+      flex-direction: column;
+      align-items: center;
       position: relative;
-      width:100%;
+      width: 100%;
     }
     .filter {
       width: 20%;
@@ -163,10 +160,10 @@ width:100%;
   @media screen and (max-width: 600px) {
     .product {
       display: flex;
-      flex-direction:column;
-      align-items:center;
+      flex-direction: column;
+      align-items: center;
       position: relative;
-      width:100%;
+      width: 100%;
     }
     .filter {
       width: 20%;
@@ -204,10 +201,10 @@ width:100%;
   @media screen and (max-width: 400px) {
     .product {
       display: flex;
-      flex-direction:column;
-      align-items:center;
+      flex-direction: column;
+      align-items: center;
       position: relative;
-      width:100%;
+      width: 100%;
     }
     .filter {
       width: 20%;
