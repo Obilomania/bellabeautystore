@@ -46,7 +46,7 @@ const FaqSection = () => {
             <b>Do you give discount ?</b>
           </Accordion.Header>
           <Accordion.Body>
-            - Yes we do give discounts on bulk orders and in Promo seasons
+            Yes we do give discounts on bulk orders and in Promo seasons
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>

@@ -79,7 +79,7 @@ const Review = () => {
 
   return (
     <ReviewSection>
-      <h2 className="heading">Client Reviews</h2>
+      <h2 className="heading">Clients Review</h2>
       <div className="sliderContent">
         <Slider {...settings}>
           {reviews.map((item, index) => (

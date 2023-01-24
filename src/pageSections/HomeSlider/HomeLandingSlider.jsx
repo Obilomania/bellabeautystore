@@ -85,6 +85,7 @@ const HomeSlider = styled.div`
           background: var(--white);
           color: grey;
           border: 0.2rem solid var(--white);
+          margin-bottom: 0.3rem;
         }
       }
     }
@@ -199,9 +200,8 @@ const HomeSlider = styled.div`
     }
   }
   @media screen and (max-width: 400px) {
-   
-      overflow: hidden;
-    
+    overflow: hidden;
+
     .overlay {
       width: 100%;
       height: 60vh;

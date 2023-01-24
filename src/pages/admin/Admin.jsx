@@ -29,6 +29,7 @@ const Administrator = styled.div`
   padding-top: 8vh;
   .admin {
     display: flex;
+    align-items: flex-start;
   }
   .navbar {
     width: 25%;

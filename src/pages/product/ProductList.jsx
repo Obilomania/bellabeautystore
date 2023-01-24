@@ -6,29 +6,38 @@ import Search from "../../components/Search";
 import { useDispatch, useSelector } from "react-redux";
 import ProductItem from "./ProductItem";
 import {
-  FILTER_BY_SEARCH, SORT_PRODUCTS,
+  FILTER_BY_SEARCH,
+  SORT_PRODUCTS,
   selectFilteredProducts,
 } from "../../redux/slice/filterSlice";
+import Pagination from "../../components/Pagination";
 
 const ProductList = ({ products }) => {
   const [grid, setGrid] = useState(true);
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("Latest");
   const filteredProducts = useSelector(selectFilteredProducts);
+
+  //for Pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage, setProductsPerPage] = useState(10);
+  //To get current Product
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = filteredProducts.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
   const dispatch = useDispatch();
 
-
   useEffect(() => {
-    dispatch(SORT_PRODUCTS({products, sort }));
+    dispatch(SORT_PRODUCTS({ products, sort }));
   }, [dispatch, products, sort]);
-
-  
 
   useEffect(() => {
     dispatch(FILTER_BY_SEARCH({ products, search }));
   }, [dispatch, products, search]);
-
-
 
   return (
     <PList>
@@ -37,7 +46,7 @@ const ProductList = ({ products }) => {
           <BsFillGridFill size={22} color="red" onClick={() => setGrid(true)} />
           <FaListAlt size={24} color="#1d8725" onClick={() => setGrid(false)} />
           <p>
-            <b>{filteredProducts.length } </b>products Found
+            <b>{filteredProducts.length} </b>products Found
           </p>
         </div>
         <div>
@@ -58,7 +67,7 @@ const ProductList = ({ products }) => {
           <p>No Product Found...</p>
         ) : (
           <>
-            {filteredProducts.map((product) => {
+            {currentProducts.map((product) => {
               return (
                 <div key={product.id}>
                   <ProductItem {...product} grid={grid} product={product} />
@@ -68,6 +77,12 @@ const ProductList = ({ products }) => {
           </>
         )}
       </div>
+      <Pagination
+        productsPerPage={productsPerPage}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+        totalProducts={filteredProducts.length}
+      />
     </PList>
   );
 };
@@ -77,6 +92,7 @@ const PList = styled.div`
   padding: 0 5rem;
   .grid {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     margin: 1rem 0;
   }
