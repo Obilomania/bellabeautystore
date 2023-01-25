@@ -268,6 +268,7 @@ const PList = styled.div`
   }
   @media screen and (max-width: 400px) {
     width: 100%;
+    height: fit-content;
     padding: 1rem;
     .grid {
       display: flex;

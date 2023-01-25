@@ -103,25 +103,22 @@ const Filter = styled.div`
     background-color: red;
   }
   @media screen and (max-width: 1200px) {
-  }
-  @media screen and (max-width: 1024px) {
-  }
-  @media screen and (max-width: 600px) {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
     width: 100%;
     padding-left: 0rem;
+    flex-direction: column;
     h4 {
       margin-top: 2rem;
     }
     .category {
-      font-size: 1rem;
+      width: 80%;
+      font-size: 0.8rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
-      gap: 3rem;
+      gap: 1rem;
     }
     .category button {
       display: block;
@@ -160,7 +157,7 @@ const Filter = styled.div`
     .active {
       position: relative;
       margin-bottom: 2px;
-      padding-left: 1rem;
+      padding-left: 0rem;
       color: red;
     }
 
@@ -170,12 +167,225 @@ const Filter = styled.div`
       left: 0;
       bottom: 1rem;
       width: 2px;
+      display: none;
+      height: 30%;
+      background-color: none;
+      border-bottom: 1px solid red;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 0rem;
+    flex-direction: column;
+    h4 {
+      margin-top: 2rem;
+    }
+    .category {
+      width: 80%;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+    .category button {
+      display: block;
+      text-align: left;
+      width: 80%;
+      height: 3rem;
+      font-size: 1rem;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      border-bottom: 0px solid #777;
+      span {
+        display: none;
+      }
+    }
+    select {
+      font-size: 1rem;
+      font-weight: 300;
+      padding: 5px;
+      font-size: 1rem;
+      width: 80%;
+      border: 1px solid #777;
+      border-radius: 3px;
+      outline: none;
+    }
+    .filterBtn {
+      width: 13rem;
+      background-color: red;
+      border: none;
+      padding: 0.6rem 0;
+      border-radius: 0.5rem;
+      color: white;
+      margin-bottom: 0rem;
+      cursor: pointer;
+    }
+    .active {
+      position: relative;
+      margin-bottom: 2px;
+      padding-left: 0rem;
+      color: red;
+    }
+
+    .active::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 1rem;
+      width: 2px;
+      display: none;
+      height: 30%;
+      background-color: none;
+      border-bottom: 1px solid red;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 0rem;
+    flex-direction: column;
+    h4 {
+      margin-top: 2rem;
+    }
+    .category {
+      width: 80%;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+    .category button {
+      display: block;
+      text-align: left;
+      width: 80%;
+      height: 3rem;
+      font-size: 1rem;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      border-bottom: 0px solid #777;
+      span {
+        display: none;
+      }
+    }
+    select {
+      font-size: 1rem;
+      font-weight: 300;
+      padding: 5px;
+      font-size: 1rem;
+      width: 80%;
+      border: 1px solid #777;
+      border-radius: 3px;
+      outline: none;
+    }
+    .filterBtn {
+      width: 13rem;
+      background-color: red;
+      border: none;
+      padding: 0.6rem 0;
+      border-radius: 0.5rem;
+      color: white;
+      margin-bottom: 0rem;
+      cursor: pointer;
+    }
+    .active {
+      position: relative;
+      margin-bottom: 2px;
+      padding-left: 0rem;
+      color: red;
+    }
+
+    .active::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 1rem;
+      width: 2px;
+      display: none;
       height: 30%;
       background-color: none;
       border-bottom: 1px solid red;
     }
   }
   @media screen and (max-width: 400px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 0rem;
+    flex-direction: column;
+    h4 {
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .category {
+      width: 80%;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+    .category button {
+      display: block;
+      text-align: left;
+      width: 80%;
+      height: 3rem;
+      font-size: 1rem;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      border-bottom: 0px solid #777;
+      span {
+        display: none;
+      }
+    }
+    select {
+      font-size: 1rem;
+      font-weight: 300;
+      padding: 5px;
+      font-size: 1rem;
+      width: 80%;
+      border: 1px solid #777;
+      border-radius: 3px;
+      outline: none;
+    }
+    .filterBtn {
+      width: 13rem;
+      background-color: red;
+      border: none;
+      padding: 0.6rem 0;
+      border-radius: 0.5rem;
+      color: white;
+      margin-bottom: 0rem;
+      cursor: pointer;
+    }
+    .active {
+      position: relative;
+      margin-bottom: 2px;
+      padding-left: 0rem;
+      color: red;
+    }
+
+    .active::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 1rem;
+      width: 2px;
+      display: none;
+      height: 30%;
+      background-color: none;
+      border-bottom: 1px solid red;
+    }
   }
 `;
 export default ProductsFilter;

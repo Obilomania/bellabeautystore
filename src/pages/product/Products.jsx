@@ -27,11 +27,7 @@ const Products = () => {
           {isLoading ? null : <ProductsFilter />}
         </aside>
         <div className="content">
-          {isLoading ? (
-            <Loader/>
-          ) : (
-            <ProductList products={products} />
-          )}
+          {isLoading ? <Loader /> : <ProductList products={products} />}
         </div>
       </div>
     </ProductSection>
@@ -76,6 +72,8 @@ const ProductSection = styled.div`
     transform: translateX(-50%, -50%);
   }
   @media screen and (max-width: 1200px) {
+    width: 100%;
+    height: fit-content;
     .product {
       display: flex;
       flex-direction: column;
@@ -117,6 +115,8 @@ const ProductSection = styled.div`
     }
   }
   @media screen and (max-width: 1024px) {
+    width: 100%;
+    height: fit-content;
     .product {
       display: flex;
       flex-direction: column;
@@ -158,6 +158,8 @@ const ProductSection = styled.div`
     }
   }
   @media screen and (max-width: 600px) {
+    width: 100%;
+    height: fit-content;
     .product {
       display: flex;
       flex-direction: column;
@@ -199,6 +201,8 @@ const ProductSection = styled.div`
     }
   }
   @media screen and (max-width: 400px) {
+    width: 100%;
+    height: fit-content;
     .product {
       display: flex;
       flex-direction: column;

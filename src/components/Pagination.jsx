@@ -75,17 +75,21 @@ const Pagination = ({
         >
           Next
         </li>
-        <p>
-          <b className="page">{`page ${currentPage}`} </b>
-          <span>of</span>
-          <b> {`${Math.ceil(totalPages)}`}</b>
-        </p>
       </ul>
+      <p>
+        <b className="page">{`page ${currentPage}`} </b>
+        <span>of</span>
+        <b> {`${Math.ceil(totalPages)}`}</b>
+      </p>
     </Paginate>
   );
 };
 
 const Paginate = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .paginate {
     list-style: none;
     margin-top: 1rem;
@@ -120,6 +124,53 @@ const Paginate = styled.div`
   .active {
     background-color: red;
     color: var(--white);
+  }
+  @media screen and (max-width: 1200px) {
+  }
+  @media screen and (max-width: 1024px) {
+  }
+  @media screen and (max-width: 600px) {
+  }
+  @media screen and (max-width: 400px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .paginate {
+      list-style: none;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 2px solid #cccccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hidden {
+      display: none;
+    }
+
+    li {
+      font-size: 0.8rem;
+      border: 1px solid #ccc;
+      min-width: 2rem;
+      height: 2rem;
+      padding: .5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    p {
+      margin-left: 1rem;
+      margin-top: 1rem;
+      .page {
+        color: red;
+      }
+    }
+    .active {
+      background-color: red;
+      color: var(--white);
+    }
   }
 `;
 export default Pagination;
