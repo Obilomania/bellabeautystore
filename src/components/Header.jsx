@@ -74,7 +74,7 @@ const Header = () => {
           <ul>
             <li onClick={closeNav}>
               <AdminLink>
-                <Link to="/admin/home" className="adminBtn">
+                <Link to="/admin/products" className="adminBtn">
                   Admin
                 </Link>
               </AdminLink>

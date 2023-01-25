@@ -5,7 +5,7 @@ import useFetchCollection from "../../customHooks/useFetchCollection";
 import { selectProducts, STORE_PRODUCTS } from "../../redux/slice/productSlice";
 import ProductList from "./ProductList";
 import ProductsFilter from "./ProductsFilter";
-import Spinner from "../../assets/Spinner.gif";
+import Loader from "../../components/Loader";
 
 const Products = () => {
   const { data, isLoading } = useFetchCollection("products");
@@ -28,7 +28,7 @@ const Products = () => {
         </aside>
         <div className="content">
           {isLoading ? (
-            <img src={Spinner} alt="Loading Icon" className="loadingSpinner" />
+            <Loader/>
           ) : (
             <ProductList products={products} />
           )}

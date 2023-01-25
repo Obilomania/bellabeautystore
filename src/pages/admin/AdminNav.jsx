@@ -18,12 +18,6 @@ const AdminNav = () => {
       <nav>
         <ul>
           <li>
-            <NavLink to="/admin/home" className={activeLink}>
-              Home
-            </NavLink>
-          </li>
-
-          <li>
             <NavLink to="/admin/products" className={activeLink}>
               All Products
             </NavLink>

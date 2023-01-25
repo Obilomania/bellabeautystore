@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import AdminNav from "./AdminNav";
-import AdminHome from "./AdminHome";
 import ViewProducts from "./ViewProducts";
 import AddProduct from "./AddProduct";
 import styled from "styled-components";
@@ -15,7 +14,6 @@ const Admin = () => {
         </div>
         <div className="content">
           <Routes>
-            <Route path="home" element={<AdminHome />} />
             <Route path="products" element={<ViewProducts />} />
             <Route path="add-product/:id" element={<AddProduct />} />
           </Routes>
