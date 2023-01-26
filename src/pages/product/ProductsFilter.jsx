@@ -111,6 +111,7 @@ const Filter = styled.div`
     flex-direction: column;
     h4 {
       margin-top: 2rem;
+      display: none;
     }
     .category {
       width: 80%;
@@ -119,6 +120,7 @@ const Filter = styled.div`
       justify-content: center;
       align-items: center;
       gap: 1rem;
+      display: none;
     }
     .category button {
       display: block;
@@ -182,6 +184,7 @@ const Filter = styled.div`
     flex-direction: column;
     h4 {
       margin-top: 2rem;
+      display: none;
     }
     .category {
       width: 80%;
@@ -190,6 +193,7 @@ const Filter = styled.div`
       justify-content: center;
       align-items: center;
       gap: 1rem;
+      display: none;
     }
     .category button {
       display: block;
@@ -253,11 +257,12 @@ const Filter = styled.div`
     flex-direction: column;
     h4 {
       margin-top: 2rem;
+      display: none;
     }
     .category {
       width: 80%;
       font-size: 0.8rem;
-      display: flex;
+      display: none;
       justify-content: center;
       align-items: center;
       gap: 1rem;
@@ -325,11 +330,12 @@ const Filter = styled.div`
     h4 {
       margin-top: 2rem;
       text-align: center;
+      display: none;
     }
     .category {
       width: 80%;
       font-size: 0.8rem;
-      display: flex;
+      display: none;
       justify-content: center;
       align-items: center;
       gap: 1rem;

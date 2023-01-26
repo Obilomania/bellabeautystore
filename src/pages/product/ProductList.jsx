@@ -41,6 +41,7 @@ const ProductList = ({ products }) => {
 
   return (
     <PList>
+      <h2>Product List</h2>
       <div className="top">
         <div className="icons">
           <BsFillGridFill size={22} color="red" onClick={() => setGrid(true)} />
@@ -90,6 +91,9 @@ const ProductList = ({ products }) => {
 const PList = styled.div`
   width: 100%;
   padding: 0 5rem;
+  h2 {
+    text-align: center;
+  }
   .grid {
     display: flex;
     flex-wrap: wrap;
