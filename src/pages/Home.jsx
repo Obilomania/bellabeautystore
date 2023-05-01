@@ -21,6 +21,10 @@ const Home = () => {
     scrollToProduct();
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Land>
       <HomeLandingSlider />

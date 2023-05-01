@@ -39,6 +39,11 @@ const ProductList = ({ products }) => {
     dispatch(FILTER_BY_SEARCH({ products, search }));
   }, [dispatch, products, search]);
 
+
+   useEffect(() => {
+     window.scrollTo(0, 0);
+   }, []);
+
   return (
     <PList><br />
       <h2>Product List</h2>

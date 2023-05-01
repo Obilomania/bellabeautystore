@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   AiFillFacebook,
   AiOutlineInstagram,
@@ -10,6 +10,10 @@ import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+   useEffect(() => {
+     window.scrollTo(0, 0);
+   }, []);
+
   const form = useRef();
 
   const sendEmail = (e) => {
