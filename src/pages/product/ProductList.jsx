@@ -40,7 +40,7 @@ const ProductList = ({ products }) => {
   }, [dispatch, products, search]);
 
   return (
-    <PList>
+    <PList><br />
       <h2>Product List</h2>
       <div className="top">
         <div className="icons">
@@ -225,11 +225,11 @@ const PList = styled.div`
   }
   @media screen and (max-width: 600px) {
     width: 100%;
-    padding: 1rem;
+    padding: 0rem;
     .grid {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       flex-wrap: wrap;
       margin: 1rem 0;
     }
@@ -240,7 +240,7 @@ const PList = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      align-items: flex-start;
+      align-items: center;
     }
     .icons {
       display: none;
@@ -255,6 +255,7 @@ const PList = styled.div`
       }
     }
     .sort {
+      display:none;
       label {
         font-size: 1rem;
         font-weight: 500;
@@ -270,53 +271,6 @@ const PList = styled.div`
       }
     }
   }
-  @media screen and (max-width: 400px) {
-    width: 100%;
-    height: fit-content;
-    padding: 1rem;
-    .grid {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin: 1rem 0;
-    }
-
-    .top {
-      width: 100%;
-      border-bottom: 2px solid #ccc;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-    .icons {
-      display: none;
-      justify-content: center;
-      align-items: center;
-      p {
-        margin-top: 1rem;
-      }
-      & > * {
-        margin-right: 7px;
-        cursor: pointer;
-      }
-    }
-    .sort {
-      label {
-        font-size: 1rem;
-        font-weight: 500;
-        margin: 0 5px;
-      }
-      select {
-        font-size: 1rem;
-        font-weight: 300;
-        border: none;
-        border-bottom: 1px solid #777;
-        outline: none;
-        margin-bottom: 1rem;
-      }
-    }
-  }
+  
 `;
 export default ProductList;

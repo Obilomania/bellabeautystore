@@ -17,10 +17,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        // "service_qitli57",
-        // "template_b1r21sw",
+        "service_bwrctdn",
+        "template_rysf38i",
         form.current,
-        "Z5JmxuUgcyVnMwjvf"
+        "Cty9QSKBbCk7FC5SH"
       )
       .then(
         (result) => {
@@ -41,34 +41,46 @@ const Contact = () => {
           <form ref={form} onSubmit={sendEmail}>
             <div className="formControl">
               <label htmlFor="">Full Name:</label>
-              <input type="text" />
+              <input type="text" name="name" />
             </div>
             <div className="formControl">
               <label htmlFor="">Email Address:</label>
-              <input type="text" required />
+              <input type="text" required name="email" />
             </div>
             <div className="formControl">
               <label htmlFor="">Message:</label>
-              <textarea name="" id="" cols="30" rows="5" required></textarea>
+              <textarea
+                name="message"
+                id=""
+                cols="30"
+                rows="5"
+                required
+              ></textarea>
             </div>
             <button type="submit"> Send Message</button>
           </form>
         </div>
         <div className="socialMedia">
-          <Link to="">
+          <a
+            href="https://www.instagram.com/bellabeautyorganics"
+            target="_blank"
+          >
             <AiOutlineInstagram size={20} />
             bellabeautyorganics
-          </Link>
-          <Link to="">
+          </a>
+          <a
+            href="https://www.facebook.com/bellabeautyorganics"
+            target="_blank"
+          >
             <AiFillFacebook size={20} /> Facebook
-          </Link>
-          <Link to="">
+          </a>
+          <a href="https://wa.me/message/2JB34EQTOJY6F1" target="_blank">
             <AiOutlineWhatsApp size={20} /> Whatsapp
-          </Link>
-          <Link to="">
+          </a>
+          <a href="tel:+2348039766079">
             <AiOutlinePhone size={20} />
-            +2348033954540
-          </Link>
+            +2348039766079
+          </a>
         </div>
       </div>
     </ContactPage>

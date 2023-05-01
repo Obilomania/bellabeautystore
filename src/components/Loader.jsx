@@ -5,7 +5,7 @@ import Spinner from "../assets/Spinner.gif";
 const Loader = () => {
   return (
     <Load>
-      <div class="loader">
+      <div className="loader">
         <img src={Spinner} alt="" />
       </div>
     </Load>
@@ -18,13 +18,15 @@ const Load = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  z-index:20;
   .loader {
     background: var(--lightVariant);
-    width: 100%;
-    height: 100vh;
+    width: 30rem;
+    height: 30rem;
     img {
-      width: 10%;
-      z-index: 3;
+      width: 30rem;
+      height:30rem;
+      z-index: 10;
       position: absolute;
       top: 50%;
       left: 50%;

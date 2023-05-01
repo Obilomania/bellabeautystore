@@ -12,16 +12,16 @@ const Footer = () => {
           <Link to="/about">Mission & Vission</Link>
         </div>
       </div>
-      <div className="policies">
+      {/* <div className="policies">
         <h5>POLICIES</h5>
         <div className="content">
           <Link to="/#Faq">FAQ</Link>
           <Link to="/about">Terms and Conditions</Link>
         </div>
-      </div>
+      </div> */}
       <div className="contact">
         <h5>CONTACT INFO</h5>
-        <div className="content">
+        <div className="content2">
           <div className="contentInfo">
             <p>
               <b>Address:</b>
@@ -33,14 +33,14 @@ const Footer = () => {
             <p>
               <b>Phone:</b>
             </p>
-            <p>08033954540</p>
+            <p>08039766079</p>
           </div>
           <hr />
           <div className="contentInfo">
             <p>
               <b>Email:</b>
             </p>
-            <p>bellabeauty@gmail.com</p>
+            <p>bellabeautyorgnic@gmail.com</p>
           </div>
           <hr />
         </div>
@@ -54,9 +54,12 @@ const Foot = styled.div`
   display: flex;
   align-items: start;
   justify-content: space-between;
-  padding: 2rem 10rem;
+  padding: 1rem 10rem;
   background: var(--background);
   color: white;
+  .content2{
+line-height:.5rem;
+  } 
   .content {
     display: flex;
     flex-direction: column;
@@ -82,10 +85,10 @@ const Foot = styled.div`
     align-items: start;
     justify-content: space-between;
     flex-direction: column;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     background: var(--background);
     color: white;
-    gap: 2rem;
+    gap: 1rem;
     .aboutUs,
     .policies,
     .contact {

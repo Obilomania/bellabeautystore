@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { REMOVE_ACTIVE_USER, SET_ACTIVE_USER } from "../redux/slice/authSlice";
 import ShowOnLogin, { ShowOnLogout } from "./HiddenLink";
 import { AdminLink } from "./AdminRoute";
+import Logo from "../assets/Logo.png";
 
 const activeLink = ({ isActive }) => (isActive ? "active" : "");
 
@@ -61,9 +62,9 @@ const Header = () => {
   return (
     <Nav>
       <div className="navBar">
-        <div className="logo">
+        <div>
           <NavLink to="/">
-            <h2>Bella Beauty</h2>
+            <img src={Logo} alt="" className="logo" />
           </NavLink>
         </div>
         <div
@@ -142,7 +143,7 @@ const Header = () => {
 
 const Nav = styled.div`
   width: 100%;
-  height: 8vh;
+  height: 10vh;
   background: var(--background);
   color: var(--white);
   position: fixed;
@@ -152,6 +153,9 @@ const Nav = styled.div`
 
   li {
     list-style: none;
+  }
+  .logo {
+    width: 8rem;
   }
   .navBar {
     display: flex;
@@ -213,7 +217,7 @@ const Nav = styled.div`
   }
   @media screen and (max-width: 1200px) {
     width: 100%;
-    height: 8vh;
+    height: 10vh;
     background: var(--background);
     color: var(--white);
     border-bottom: 1px solid var(--lightVariant);
@@ -439,119 +443,6 @@ const Nav = styled.div`
   }
   @media screen and (max-width: 600px) {
     width: 100%;
-    height: 8vh;
-    background: var(--background);
-    color: var(--white);
-    border-bottom: 1px solid var(--lightVariant);
-    li {
-      list-style: none;
-    }
-    .navBar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 1rem;
-      z-index: 10;
-    }
-    .logo h2 {
-      color: var(--white);
-      font-size: 1.4rem;
-    }
-    a {
-      color: var(--white);
-      transition: var(--transition);
-    }
-    a:hover {
-      color: var(--lightVariant);
-    }
-    .navLinks ul {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-direction: column;
-      background: var(--background);
-      position: absolute;
-      padding-top: 2rem;
-      left: 0;
-      top: 8vh;
-      width: 60%;
-      height: 70vh;
-      gap: 4rem;
-      transition: var(--transition);
-      z-index: 10;
-      border-right: 1px solid white;
-      border-bottom: 1px solid white;
-    }
-    .navLinksClose ul {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-direction: column;
-      background: var(--background);
-      position: absolute;
-      padding-top: 2rem;
-      left: -100%;
-      top: 8vh;
-      width: 60%;
-      height: 70vh;
-      gap: 4rem;
-      transition: var(--transition);
-      z-index: 10;
-    }
-    .cart a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-decoration: none;
-      position: relative;
-      margin-top: 0.5rem;
-    }
-    .cart p {
-      position: absolute;
-      right: -0.7rem;
-      top: -0.4 rem;
-      font-size: 0.8rem;
-    }
-    .endNav {
-      display: flex;
-      gap: 1.5rem;
-    }
-    .hamburger {
-      display: flex;
-      cursor: pointer;
-      margin-top: 0.5rem;
-      z-index: 2;
-    }
-    .navOverlay {
-      display: block;
-      position: absolute;
-      top: 8vh;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.5);
-      opacity: 1;
-      transition: var(--transition);
-      z-index: 9;
-      cursor: pointer;
-    }
-    .closeNavOverlay {
-      display: none;
-      position: absolute;
-      top: 8vh;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      transition: var(--transition);
-      z-index: 9;
-      cursor: pointer;
-    }
-  }
-  @media screen and (max-width: 400px) {
-    width: 100%;
     height: 10vh;
     background: var(--background);
     color: var(--white);
@@ -566,9 +457,10 @@ const Nav = styled.div`
       padding: 1rem 1rem;
       z-index: 10;
     }
-    .logo h2 {
+    .logo {
       color: var(--white);
-      font-size: 1rem;
+      font-size: 1.4rem;
+      width: 5rem;
     }
     a {
       color: var(--white);
@@ -584,13 +476,12 @@ const Nav = styled.div`
       flex-direction: column;
       background: var(--background);
       position: absolute;
-      padding-top: 0.5rem;
+      padding-top: 2rem;
       left: 0;
-      top: 10vh;
+      top: 8vh;
       width: 60%;
       height: 70vh;
-      gap: 2rem;
-      padding-top: 1rem;
+      gap: 4rem;
       transition: var(--transition);
       z-index: 10;
       border-right: 1px solid white;
@@ -603,13 +494,12 @@ const Nav = styled.div`
       flex-direction: column;
       background: var(--background);
       position: absolute;
-      padding-top: 0.5rem;
+      padding-top: 2rem;
       left: -100%;
-      top: 10vh;
+      top: 8vh;
       width: 60%;
       height: 70vh;
-      gap: 2rem;
-      padding-top: 1rem;
+      gap: 4rem;
       transition: var(--transition);
       z-index: 10;
     }
@@ -621,7 +511,6 @@ const Nav = styled.div`
       text-decoration: none;
       position: relative;
       margin-top: 0.5rem;
-      font-size: 3rem;
     }
     .cart p {
       position: absolute;
@@ -642,7 +531,7 @@ const Nav = styled.div`
     .navOverlay {
       display: block;
       position: absolute;
-      top: 10vh;
+      top: 8vh;
       left: 0;
       width: 100%;
       height: 100vh;
@@ -655,8 +544,8 @@ const Nav = styled.div`
     .closeNavOverlay {
       display: none;
       position: absolute;
-      top: 10vh;
-      left: -100%;
+      top: 8vh;
+      left: 0;
       width: 100%;
       height: 100vh;
       background: rgba(0, 0, 0, 0.5);

@@ -50,5 +50,39 @@ const Searchbar = styled.div`
     align-items: center;
     justify-content: center;
   }
+  @media screen and (max-width: 1024px) {
+    width:100%;
+    margin: 5px 0;
+    position: relative;
+    flex: 1;
+    .search {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .searchIcon {
+      position: absolute;
+      left: 0.7rem;
+    }
+    input[type="text"] {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 300;
+      padding: 0.5rem 0rem 0.5rem 2rem;
+      margin: 1rem auto;
+      width: 100%;
+      border: 1px solid #777;
+      border-radius: 0.5rem;
+      outline: none;
+      background: none;
+    }
+    input::placeholder {
+      margin: 0 3rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 `;
 export default Search;

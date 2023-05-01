@@ -289,6 +289,7 @@ const Featured = styled.div`
     width: 100%;
     padding: 1rem;
     height: fit-content;
+    overflow:hidden;
     .feat-container {
       width: 100%;
       display: flex;
@@ -301,7 +302,7 @@ const Featured = styled.div`
       position: relative;
       display: flex;
       width: 90%;
-      height: 15rem;
+      height: 10rem;
       overflow: hidden;
       border-radius: 0.5rem;
       box-shadow: 1rem 1rem 1rem -1rem #1d8725;
@@ -315,9 +316,11 @@ const Featured = styled.div`
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+        font-weight:400;
+        font-size:.8rem;
       }
       .overlay {
-        width: 10rem;
+        width: 7rem;
         height: 2rem;
         background: rgba(0, 0, 0, 0.7);
         position: absolute;
@@ -328,53 +331,7 @@ const Featured = styled.div`
     }
     img {
       width: 382px;
-      height: 15rem;
-    }
-  }
-  @media screen and (max-width: 400px) {
-    width: 100%;
-    padding: 1rem;
-    height: fit-content;
-    .feat-container {
-      width: 100%;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-    .F-content {
-      position: relative;
-      display: flex;
-      width: 90%;
-      height: 15rem;
-      overflow: hidden;
-      border-radius: 0.5rem;
-      box-shadow: 1rem 1rem 1rem -1rem #1d8725;
-      cursor: pointer;
-      h4 {
-        display: block;
-        z-index: 4;
-        color: var(--white);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-      }
-      .overlay {
-        width: 10rem;
-        height: 2rem;
-        background: rgba(0, 0, 0, 0.7);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-    img {
-      width: 323px;
-      height: 15rem;
+      height: 10rem;
     }
   }
 `;

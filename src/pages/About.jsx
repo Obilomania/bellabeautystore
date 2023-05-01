@@ -13,18 +13,27 @@ const About = () => {
           <h3>About Us</h3>
         </div>
         <div className="content">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa quidem
-          voluptatibus omnis pariatur? Harum nulla est recusandae asperiores
-          placeat natus cum. Ipsam amet accusantium natus temporibus velit
-          ducimus deserunt vitae commodi. Tenetur, quibusdam. Perferendis modi
-          expedita molestiae, id sint explicabo et corporis eveniet soluta,
-          perspiciatis, suscipit dolore! Provident, quos. Reiciendis debitis
-          quaerat explicabo modi consectetur asperiores neque animi similique
-          est illo libero, eaque exercitationem voluptatum vel ea placeat rerum
-          deleniti, voluptates enim dolorem consequuntur soluta repudiandae.
-          Neque eos vitae impedit quae sint, error consequuntur eius natus!
-          Quaerat pariatur corporis libero, nemo architecto iusto unde nam modi
-          voluptatum omnis nobis qui!
+          At our organic store, we believe in the power of natural, wholesome,
+          and sustainably sourced products. We are committed to providing our
+          customers with the freshest, healthiest, and most delicious organic
+          produce, grocery items, and wellness products. Our store is founded on
+          the principles of organic farming, which prioritize the use of
+          organic, non-GMO, and chemical-free methods to grow and produce food.
+          We work closely with local farmers and artisans who share our values,
+          ensuring that our products are grown and made with care and respect
+          for the environment.
+          <br />
+          In addition to our commitment to providing high-quality organic
+          products, we also strive to create a warm and welcoming shopping
+          experience for our customers. Our knowledgeable and friendly staff are
+          always available to assist you with any questions or recommendations,
+          and we take pride in building meaningful relationships with our
+          customers based on trust, transparency, and shared values. <br />
+          Thank you for choosing our organic store as your source for fresh,
+          wholesome, and sustainable products. We look forward to serving you
+          and being a part of your journey towards a healthier, happier, and
+          more sustainable life. Visit us today and experience the joy of
+          shopping at a true organic store!
         </div>
       </div>
       <div className="missionVision">
@@ -33,12 +42,13 @@ const About = () => {
             <h4>Mission</h4>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            voluptatum assumenda necessitatibus ipsam, omnis modi sit provident
-            sint doloremque incidunt, consectetur neque eaque fugiat nobis
-            beatae esse iure sequi, numquam sed minus corporis praesentium
-            ducimus? Quas commodi, velit temporibus debitis dolores a, tempora
-            nam inventore nostrum, accusantium soluta suscipit optio!
+            Our mission is to provide our customers with the highest quality
+            organic products, sourced from local and sustainable farms, and to
+            promote healthy, sustainable, and mindful living. We are committed
+            to offering a diverse selection of organic products, from fresh
+            produce to pantry staples, personal care items, and supplements,
+            while creating a welcoming and inclusive shopping experience for our
+            customers.
           </p>
         </div>
         <div className="vision">
@@ -46,12 +56,15 @@ const About = () => {
             <h4>Vision</h4>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            voluptatum assumenda necessitatibus ipsam, omnis modi sit provident
-            sint doloremque incidunt, consectetur neque eaque fugiat nobis
-            beatae esse iure sequi, numquam sed minus corporis praesentium
-            ducimus? Quas commodi, velit temporibus debitis dolores a, tempora
-            nam inventore nostrum, accusantium soluta suscipit optio!
+            Our vision is to be a leading organic store, inspiring and
+            empowering our customers to make conscious and sustainable choices
+            about their health and lifestyle. We strive to build a community of
+            like-minded individuals who share our values of health,
+            sustainability, and environmental stewardship, and to create a
+            positive impact on the planet and the communities we serve. We
+            envision a future where organic and sustainable living is accessible
+            to all, and where everyone can enjoy the benefits of healthy,
+            wholesome, and 100% orgaic products.
           </p>
         </div>
       </div>
@@ -82,7 +95,7 @@ const AboutPage = styled.div`
   }
   .missionVision {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     gap: 2rem;
     margin-bottom: 3rem;

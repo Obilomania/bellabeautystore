@@ -260,85 +260,13 @@ const Filter = styled.div`
       display: none;
     }
     .category {
-      width: 80%;
+      width: 100%;
       font-size: 0.8rem;
       display: none;
+      flex-direction:row;
       justify-content: center;
       align-items: center;
-      gap: 1rem;
-    }
-    .category button {
-      display: block;
-      text-align: left;
-      width: 80%;
-      height: 3rem;
-      font-size: 1rem;
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
-      border-bottom: 0px solid #777;
-      span {
-        display: none;
-      }
-    }
-    select {
-      font-size: 1rem;
-      font-weight: 300;
-      padding: 5px;
-      font-size: 1rem;
-      width: 80%;
-      border: 1px solid #777;
-      border-radius: 3px;
-      outline: none;
-    }
-    .filterBtn {
-      width: 13rem;
-      background-color: red;
-      border: none;
-      padding: 0.6rem 0;
-      border-radius: 0.5rem;
-      color: white;
-      margin-bottom: 0rem;
-      cursor: pointer;
-    }
-    .active {
-      position: relative;
-      margin-bottom: 2px;
-      padding-left: 0rem;
-      color: red;
-    }
-
-    .active::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 1rem;
-      width: 2px;
-      display: none;
-      height: 30%;
-      background-color: none;
-      border-bottom: 1px solid red;
-    }
-  }
-  @media screen and (max-width: 400px) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding-left: 0rem;
-    flex-direction: column;
-    h4 {
-      margin-top: 2rem;
-      text-align: center;
-      display: none;
-    }
-    .category {
-      width: 80%;
-      font-size: 0.8rem;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
+      gap: 0.2rem;
     }
     .category button {
       display: block;

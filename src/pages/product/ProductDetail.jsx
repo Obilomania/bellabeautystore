@@ -47,37 +47,26 @@ const ProductDetail = () => {
                 />
               </div>
               <div className="detailContent">
-                <div className="d-Name ctn">
-                  <p className="ctn-P">
-                    <b>Name :</b>
-                  </p>
-                  <p>{product.name}</p>
-                </div>
+                <p className="ctn-P">
+                  <b>Name :</b> {product.name}
+                </p>
 
-                <div className="d-Category ctn">
-                  <p className="ctn-P">
-                    <b>Category :</b>
-                  </p>
-                  <p>{product.category}</p>
-                </div>
+                <p className="ctn-P">
+                  <b>Category :</b> {product.category}
+                </p>
 
-                <div className="d-Description ctn">
-                  <p className="ctn-P">
-                    <b>Description :</b>
-                  </p>
-                  <p>{product.desc}</p>
-                </div>
+                <p className="ctn-P">
+                  <b>Description :</b> {product.desc}
+                </p>
 
-                <div className="d-Benefits ctn">
-                  <p className="ctn-P">
-                    <b>Benefits :</b>
-                  </p>
+                <p className="ctn-P">
+                  <b>Benefits :</b>{" "}
                   <ul>
                     <li>{product.benefit1}</li>
                     <li>{product.benefit2}</li>
                     <li>{product.benefit3}</li>
                   </ul>
-                </div>
+                </p>
               </div>
             </div>
             <div className="buttons">
@@ -141,6 +130,7 @@ const Detail = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    margin-top:1rem;
     a {
       width: 10rem;
       text-align: center;
@@ -163,7 +153,7 @@ const Detail = styled.div`
   }
 
   @media screen and (max-width: 940px) {
-    padding: 7rem 1rem 2rem 1rem;
+    padding: 1rem 1rem 2rem 1rem;
     width: 100%;
     height: fit-content;
     display: flex;
@@ -178,9 +168,9 @@ const Detail = styled.div`
       width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: centert;
-      justify-content: space-between;
-      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      gap: 0rem;
     }
     .detailContent {
       width: 100%;
@@ -188,7 +178,13 @@ const Detail = styled.div`
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
-      gap: 1rem;
+      gap: 0rem;
+      margin-top: 1rem;
+      .ctn-p {
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+      }
     }
     h3 {
       text-align: center;
