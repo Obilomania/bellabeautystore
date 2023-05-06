@@ -35,7 +35,7 @@ const Products = () => {
 };
 const ProductSection = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   .product {
     display: flex;
     position: relative;

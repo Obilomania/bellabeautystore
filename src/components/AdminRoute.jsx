@@ -8,7 +8,7 @@ const AdminRoute = ({ children }) => {
   const userEmail = useSelector(selectEmail);
   if (
     userEmail === "iloanyaobinna@gmail.com" ||
-    userEmail === "obilomania@gmail.com"
+    userEmail === "bellabeautyorganic@gmail.com"
   ) {
     return children;
   }
@@ -28,7 +28,7 @@ export const AdminLink = ({ children }) => {
   const userEmail = useSelector(selectEmail);
   if (
     userEmail === "iloanyaobinna@gmail.com" ||
-    userEmail === "obilomania@gmail.com"
+    userEmail === "bellabeautyorganic@gmail.com"
   ) {
     return children;
   }

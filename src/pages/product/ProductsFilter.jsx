@@ -263,7 +263,7 @@ const Filter = styled.div`
       width: 100%;
       font-size: 0.8rem;
       display: none;
-      flex-direction:row;
+      flex-direction: row;
       justify-content: center;
       align-items: center;
       gap: 0.2rem;

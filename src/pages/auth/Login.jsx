@@ -104,16 +104,16 @@ const Login = () => {
                 <button type="submit" className="btn loginbtn">
                   Log in
                 </button>
-                <p className="forget" onClick={() => setModal(true)}>
+                {/* <p className="forget" onClick={() => setModal(true)}>
                   Forgot Password?
-                </p>
+                </p> */}
 
-                <p>
+                {/* <p>
                   Dont have an account?{" "}
                   <b>
                     <Link to="/register">Register</Link>
                   </b>{" "}
-                </p>
+                </p> */}
               </div>
             </form> <br />
             <div className="orPass">
