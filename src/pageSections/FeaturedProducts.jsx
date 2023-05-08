@@ -246,9 +246,9 @@ const Featured = styled.div`
     .feat-container {
       width: 100%;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
-      gap: 2rem;
+      gap: 5rem;
       flex-wrap: wrap;
     }
     .F-content {
@@ -272,7 +272,7 @@ const Featured = styled.div`
       }
       .overlay {
         width: 10rem;
-        height: 2rem;
+        height: 3.5rem;
         background: rgba(0, 0, 0, 0.7);
         position: absolute;
         top: 50%;

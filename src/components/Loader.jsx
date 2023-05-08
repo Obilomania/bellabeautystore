@@ -46,11 +46,16 @@ const Load = styled.div`
     left: 0;
     .loader {
       background: var(--lightVariant);
-      width: 100%;
-      height: 100vh;
+      width: 10rem;
+      height: 10rem;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       img {
-        width: 10%;
-        z-index: 3;
+        width: 10rem;
+        height: 10rem;
+        z-index: 10;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -66,11 +71,16 @@ const Load = styled.div`
     left: 0;
     .loader {
       background: var(--lightVariant);
-      width: 100%;
-      height: 100vh;
+      width: 10rem;
+      height: 10rem;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       img {
-        width: 10%;
-        z-index: 3;
+        width: 10rem;
+        height: 10rem;
+        z-index: 10;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -86,11 +96,16 @@ const Load = styled.div`
     left: 0;
     .loader {
       background: var(--lightVariant);
-      width: 100%;
-      height: 100vh;
+      width: 10rem;
+      height: 10rem;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       img {
-        width: 10%;
-        z-index: 3;
+        width: 10rem;
+        height: 10rem;
+        z-index: 10;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -106,11 +121,16 @@ const Load = styled.div`
     left: 0;
     .loader {
       background: var(--lightVariant);
-      width: 100%;
-      height: 100vh;
+      width: 10rem;
+      height: 10rem;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       img {
-        width: 10%;
-        z-index: 3;
+        width: 10rem;
+        height: 10rem;
+        z-index: 10;
         position: absolute;
         top: 50%;
         left: 50%;

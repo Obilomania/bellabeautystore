@@ -117,7 +117,7 @@ const HomeSlider = styled.div`
       transform: translate(-50%, -30%);
       z-index: 4;
       background: rgba(255, 255, 255, 0.3);
-      width: 50rem;
+      width: 80%;
       height: 15rem;
       display: flex;
       flex-direction: column;
@@ -127,6 +127,7 @@ const HomeSlider = styled.div`
       h1 {
         color: var(--white);
         margin-bottom: 2rem;
+        font-size:3rem;
       }
       .buttons {
         display: flex;

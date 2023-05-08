@@ -39,13 +39,13 @@ const ProductList = ({ products }) => {
     dispatch(FILTER_BY_SEARCH({ products, search }));
   }, [dispatch, products, search]);
 
-
-   useEffect(() => {
-     window.scrollTo(0, 0);
-   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <PList><br />
+    <PList>
+      <br />
       <h2>Product List</h2>
       <div className="top">
         <div className="icons">
@@ -187,8 +187,12 @@ const PList = styled.div`
     width: 100%;
     padding: 1rem;
     .grid {
+      /* width: 100%; */
       display: flex;
-      gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 3rem;
       margin: 1rem 0;
     }
 
@@ -260,7 +264,7 @@ const PList = styled.div`
       }
     }
     .sort {
-      display:none;
+      display: none;
       label {
         font-size: 1rem;
         font-weight: 500;
@@ -276,6 +280,5 @@ const PList = styled.div`
       }
     }
   }
-  
 `;
 export default ProductList;

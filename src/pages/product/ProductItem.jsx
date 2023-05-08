@@ -276,6 +276,7 @@ const ProdItem = styled.div`
         background: var(--primary);
         color: var(--white);
         font-size: 0.8rem;
+        margin-left:-.1rem;
       }
       .content {
         position: absolute;
