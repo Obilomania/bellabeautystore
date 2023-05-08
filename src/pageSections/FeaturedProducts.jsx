@@ -301,7 +301,7 @@ const Featured = styled.div`
     .F-content {
       position: relative;
       display: flex;
-      width: 90%;
+      width: fit-content;
       height: 10rem;
       overflow: hidden;
       border-radius: 0.5rem;
@@ -330,7 +330,7 @@ const Featured = styled.div`
       }
     }
     img {
-      width: 382px;
+      width: 10rem;
       height: 10rem;
     }
   }
