@@ -17,6 +17,7 @@ const Pagination = ({
   // Paginate
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
+    window.scrollTo(0, 0);
   };
 
   // GO to next page
@@ -27,6 +28,7 @@ const Pagination = ({
       setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
       setminPageNumberLimit(minPageNumberLimit + pageNumberLimit);
     }
+    window.scrollTo(0, 0);
   };
 
   // GO to prev page
@@ -37,6 +39,7 @@ const Pagination = ({
       setmaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
       setminPageNumberLimit(minPageNumberLimit - pageNumberLimit);
     }
+    window.scrollTo(0, 0);
   };
 
   for (let i = 1; i <= Math.ceil(totalProducts / productsPerPage); i++) {
@@ -154,7 +157,7 @@ const Paginate = styled.div`
       border: 1px solid #ccc;
       min-width: 2rem;
       height: 2rem;
-      padding: .5rem;
+      padding: 0.5rem;
       display: flex;
       justify-content: center;
       align-items: center;
