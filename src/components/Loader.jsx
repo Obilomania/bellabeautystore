@@ -15,7 +15,7 @@ const Loader = () => {
 const Load = styled.div`
   width: 100%;
   height: 100vh;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 20;
@@ -41,7 +41,7 @@ const Load = styled.div`
   @media screen and (max-width: 1200px) {
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     .loader {
@@ -66,7 +66,7 @@ const Load = styled.div`
   @media screen and (max-width: 1024px) {
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     .loader {
@@ -91,7 +91,7 @@ const Load = styled.div`
   @media screen and (max-width: 600px) {
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     .loader {
@@ -116,7 +116,7 @@ const Load = styled.div`
   @media screen and (max-width: 400px) {
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     .loader {
