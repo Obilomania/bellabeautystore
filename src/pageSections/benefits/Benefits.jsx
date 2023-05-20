@@ -54,7 +54,7 @@ const Ben = styled.div`
   }
   @media screen and (max-width: 1200px) {
     width: 100%;
-    height: 70vh;
+    height: 45vh;
     background: var(--background);
     position: relative;
     overflow: hidden;
@@ -65,7 +65,7 @@ const Ben = styled.div`
     .benContent {
       display: flex;
       gap: 1rem;
-      align-items: start;
+      align-items: center;
       flex-direction: column;
       justify-content: flex-end;
       width: 100%;
@@ -169,7 +169,7 @@ const Ben = styled.div`
         margin: auto;
         color: var(--white);
         li {
-          font-size: .9rem;
+          font-size: 0.9rem;
         }
       }
     }

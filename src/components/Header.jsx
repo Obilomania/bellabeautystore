@@ -217,8 +217,9 @@ const Nav = styled.div`
   }
   @media screen and (max-width: 1200px) {
     width: 100%;
-    height: 10vh;
+    height: 12vh;
     background: var(--background);
+    padding:0rem 4rem;
     color: var(--white);
     border-bottom: 1px solid var(--lightVariant);
     li {

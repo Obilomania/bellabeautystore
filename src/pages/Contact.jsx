@@ -10,9 +10,9 @@ import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-   useEffect(() => {
-     window.scrollTo(0, 0);
-   }, []);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const form = useRef();
 
@@ -176,6 +176,98 @@ const ContactPage = styled.div`
     gap: 0.5rem;
     color: var(--primary);
     text-decoration: none;
+  }
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    min-height: 70vh;
+    padding: 0rem 5rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    .contactContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+    }
+    h3 {
+      margin-top: 7rem;
+      color: var(--primary);
+    }
+    .contactForm {
+      width: 100%;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      label {
+        color: var(--primary);
+        font-size: 0.7rem;
+      }
+      input {
+        font-size: 0.7rem;
+        padding: 0.7rem 0.5rem;
+        border-radius: 0.5rem;
+      }
+      textarea {
+        font-size: 0.7rem;
+        resize: none;
+        border-radius: 0.5rem;
+      }
+    }
+    .formControl {
+      display: flex;
+      flex-direction: column;
+    }
+    button {
+      padding: 0.5rem 0;
+      width: 100%;
+      text-align: center;
+      background: var(--background);
+      color: var(--white);
+      border-radius: 0.3rem;
+      cursor: pointer;
+      font-size: 0.7rem;
+      letter-spacing: 0.1rem;
+      transition: 400ms all ease-in-out;
+      margin-top: 1rem;
+    }
+    button:hover {
+      padding: 0.5rem 0;
+      width: 100%;
+      text-align: center;
+      background: var(--white);
+      color: var(--primary);
+      border-radius: 0.3rem;
+      border: 1px solid var(--primary);
+      cursor: pointer;
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+      transition: 400ms all ease-in-out;
+      margin-top: 1rem;
+    }
+    .socialMedia {
+      width: 100%;
+      font-size: 0.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: start;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 0.5rem;
+      color: var(--primary);
+    }
   }
   @media screen and (max-width: 940px) {
     width: 100%;

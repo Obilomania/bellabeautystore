@@ -57,9 +57,9 @@ const Foot = styled.div`
   padding: 1rem 10rem;
   background: var(--background);
   color: white;
-  .content2{
-line-height:.5rem;
-  } 
+  .content2 {
+    line-height: 0.5rem;
+  }
   .content {
     display: flex;
     flex-direction: column;
@@ -78,6 +78,42 @@ line-height:.5rem;
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
+  }
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 1rem 5rem;
+    background: var(--background);
+    color: white;
+    gap: 1rem;
+    .aboutUs,
+    .policies,
+    .contact {
+      margin: auto;
+      width: 100%;
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+    h4 {
+      font-weight: bolder;
+      border-bottom: 1px solid var(--white);
+      text-align: center;
+    }
+    hr {
+      background: var(--white);
+      width: 100%;
+      height: 1px;
+    }
+    p,
+    a {
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
   }
   @media screen and (max-width: 940px) {
     width: 100%;

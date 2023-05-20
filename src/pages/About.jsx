@@ -121,6 +121,60 @@ const AboutPage = styled.div`
       padding: 1rem 0rem;
     }
   }
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    .content {
+      font-size: 0.7rem;
+    }
+    .image {
+      margin-top: 4rem;
+      width: 100%;
+      height: fit-content;
+      overflow: hidden;
+    }
+    .header {
+      width: 100%;
+      height: fit-content;
+      background: var(--background);
+      h3 {
+        text-align: center;
+        color: white;
+        padding: 0.3rem 0rem;
+      }
+    }
+    .missionVision {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      p {
+        font-size: 0.7rem;
+      }
+    }
+    .mission,
+    .vision {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+    .subHeading {
+      width: 100%;
+      height: fit-content;
+      background: var(--background);
+      h4 {
+        text-align: center;
+        color: white;
+        padding: 0.2rem 0rem;
+      }
+    }
+  }
   @media screen and (max-width: 940px) {
     width: 100%;
     padding: 0 1rem;

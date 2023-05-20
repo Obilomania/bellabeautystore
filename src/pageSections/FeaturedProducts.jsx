@@ -208,7 +208,7 @@ const Featured = styled.div`
     .F-content {
       position: relative;
       display: flex;
-      width: 90%;
+      width: 15rem;
       height: 15rem;
       overflow: hidden;
       border-radius: 0.5rem;
